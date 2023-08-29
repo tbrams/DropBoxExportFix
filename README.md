@@ -1,16 +1,16 @@
   README.md 
 # Export all your DropBox Paper documents including images as Markdown
-DropBox Paper has served me well for years now, but recently I have started experimenting with various locally hosted MarkDown solutions that suited my workflow better and did not require a very expensive subscription.
+DropBox Paper has served me well for years now, but recently I have started experimenting with various locally hosted [Markdown](https://www.markdownguide.org/getting-started/) solutions that suited my workflow better and did not require a very expensive subscription.
 
 ## DropBox Image/screenshot issue
-You can easily export DropBox Paper notes as MarkDown, but unfortunately there is no way easy way to avoid DropBox hosting all images and screenshots in these files.
+You can easily export DropBox Paper notes as Markdown, but unfortunately there is no way easy way to avoid DropBox hosting all images and screenshots in these files.
 
 # Example
 Having a lot of notes from back when I studied for the ATPL exam, I considered maintaining a locally hosted version of these instead of continuing the relatively expensive subscription just to these notes.
 
 Exporting notes in Markdown format from Dropbox worked flawlessly. The Markdown rendered just as expected, but When I looked in the Markdown code, I noticed that all screenshots and images were still hosted by DropBox.
 
-```MarkDown
+```Markdown
 The radio bearing (relative bearing) of the NDB is measured inside the aircraft, so all corrections are applied at the aircraft estimated DR position. First the relative bearing is converted into a great circle bearing. Then it is converted into a rhumb line bearing. As the bearing is the bearing of the station from the aircraft, it must be converted info the bearing of he station from the aircraft, it must be converted into the ;bearing of the aircraft from the station (reciprocal) before it can be plotted.
 
 - 030 RB + 048 TH = 078 TB (GC)
@@ -51,7 +51,7 @@ When you have made sure you have all the desired files safely downloaded from Dr
 Run the script in the directory containing your markdown files and subdirectories. It will recursively search for all markdown files, download all the images from the links in each markdown file, save them in a subdirectory called "images" in the same directory as the markdown file, replace the links in the content with the local path to the images, and save the modified content to a new file with a "\_new" suffix in the filename.
 
 ## Updated Markdown example
-```MarkDown
+```Markdown
 ...
 
 The radio bearing (relative bearing) of the NDB is measured inside the aircraft, so all corrections are applied at the aircraft estimated DR position. First the relative bearing is converted into a great circle bearing. Then it is converted into a rhumb line bearing. As the bearing is the bearing of the station from the aircraft, it must be converted info the bearing of he station from the aircraft, it must be converted into the ;bearing of the aircraft from the station (reciprocal) before it can be plotted.
