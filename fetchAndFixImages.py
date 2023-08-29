@@ -24,14 +24,18 @@ def process_markdown_files(directory):
 
             # Download each image and save it to the 'images' directory
             for link in image_links:
-                response = requests.get(link)
-                if response.status_code == 200:
-                    filename = link.split('/')[-1]
-                    with open(f'{images_dir}/{filename}', 'wb') as f:
-                        f.write(response.content)
-                    print(f'Downloaded {filename}')
+                filename = link.split('/')[-1]
+                file_path = f'{images_dir}/{filename}'
+                if not os.path.exists(file_path):
+                    response = requests.get(link)
+                    if response.status_code == 200:
+                        with open(file_path, 'wb') as f:
+                            f.write(response.content)
+                        print(f'Downloaded {filename}')
+                    else:
+                        print(f'Failed to download {link}')
                 else:
-                    print(f'Failed to download {link}')
+                    print(f'{filename} already exists, skipping download')
 
             # Replace the links in the content with the local path to the images
             new_content = re.sub(r'https://paper-attachments.dropbox.com[^\s\)]+', lambda x: f'images/{x.group(0).split("/")[-1]}', content)
